@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla con QR de acceso</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      text-align: center;
+    }
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    td, th {
+      border: 1px solid #aaa;
+      padding: 8px;
+    }
+    td {
+      background-color: #f9f9f9;
+    }
+    td[contenteditable] {
+      background-color: #fffbe6;
+    }
+    #qrcode {
+      margin-top: 30px;
+    }
+    input {
+      width: 400px;
+      padding: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tabla de Datos + Código QR de Acceso</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Correo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td contenteditable="true">Juan</td>
+        <td contenteditable="true">30</td>
+        <td contenteditable="true">juan@email.com</td>
+      </tr>
+      <tr>
+        <td contenteditable="true">Ana</td>
+        <td contenteditable="true">25</td>
+        <td contenteditable="true">ana@email.com</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Ingresa la URL donde estará alojada esta página:</p>
+  <input type="text" id="url" placeholder="https://tupagina.com/tabla.html">
+  <br>
+  <button onclick="generarQR()">Generar Código QR</button>
+
+  <div id="qrcode"></div>
+
+  <!-- Librería QRCode.js -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <script>
+    function generarQR() {
+      const url = document.getElementById("url").value.trim();
+      const qrContainer = document.getElementById("qrcode");
+      qrContainer.innerHTML = "";
+
+      if (!url) {
+        alert("Por favor ingresa una URL válida donde se encuentre esta página.");
+        return;
+      }
+
+      new QRCode(qrContainer, {
+        text: url,
+        width: 200,
+        height: 200,
+        colorDark: "#000",
+        colorLight: "#fff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+  </script>
+
+</body>
+</html>
