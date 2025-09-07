@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extintores por Ubicación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* El fondo gris claro de la página */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            /* ESTILOS PARA EL FONDO BLANCO Y LA SOMBRA */
+            text-align: center;
+            background-color: #fff; /* Fondo blanco */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            /* FIN DE ESTILOS DEL FONDO BLANCO */
+        }
+        h1 {
+            color: #1a533f;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .boton {
+            display: block;
+            width: 200px;
+            padding: 15px 20px;
+            margin: 15px auto;
+            background-color: #1a533f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+            border: none;
+            cursor: pointer;
+        }
+        .boton:hover {
+            background-color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Extintores por Ubicación</h1>
+        <p>Selecciona el nivel del edificio:</p>
+        <a href="extintores_azotea.html" class="boton">Azotea</a>
+        <a href="extintores_quinto.html" class="boton">Piso 5</a>
+        <a href="extintores_cuarto.html" class="boton">Piso 4</a>
+        <a href="#" class="boton">Piso 3</a>
+        <a href="#" class="boton">Piso 2</a>
+        <a href="#" class="boton">Piso 1</a>
+        <a href="#" class="boton">Planta Baja</a>
+        <a href="#" class="boton">Sótano</a>
+    </div>
+</body>
+</html>
